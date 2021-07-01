@@ -1,3 +1,13 @@
 {
-    "python.pythonPath": "C:\\Users\\Atharva\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"
+  "python.pythonPath": "C:\\Users\\Atharva\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
+  },
+
+  "python.autoComplete.extraPaths": [
+    "C:\\users\\atharva\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.7_qbz5n2kfra8p0\\localcache\\local-packages\\python37\\site-packages\\cv2\\cv2.cp37-win_amd64.pyd"
+  ]
 }

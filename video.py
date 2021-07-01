@@ -1,10 +1,15 @@
 import cv2
 import math
-cap = cv2.VideoCapture('Dad Video.avi')#default camera index is either 0 or -1
-
+cap = cv2.VideoCapture(0)#default camera index is either 0 or -1
+# print(cap.get(3))#Gives CAP_PROP_FRAME_WIDTH
 # fourcc = cv2.VideoWriter_fourcc('X','V','I,'D)
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
 out = cv2.VideoWriter('output.avi',fourcc, 30.0, (640,480))#1st arg is name of output file, 2nd arg is fourcc code: 4byte code, use to specify video codec fourcc.org/codecs.php, 3rd arg is no of frames/sec, 4th arg is size
+
+cap.set(3, 3000.0)
+cap.set(4, 3000.0)#Heigth
+print(cap.get(3))
+print(cap.get(4))
 
 i=1
 time=66
@@ -21,12 +26,12 @@ while(cap.isOpened()):
         #     cv2.imwrite(x,frame)
         #     i+=1
 
-        if(math.floor(cap.get(cv2.CAP_PROP_POS_MSEC))==time):
-            print(i)
-            x = f"{i} copy.jpg"
-            cv2.imwrite(x,frame)
-            i+=1
-            time+=17000
+        # if(math.floor(cap.get(cv2.CAP_PROP_POS_MSEC))==time):
+        #     print(i)
+        #     x = f"{i} copy.jpg"
+        #     cv2.imwrite(x,frame)
+        #     i+=1
+        #     time+=17000
         # out.write(frame)
 
         cv2.imshow('frame', frame)
