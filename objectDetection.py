@@ -37,6 +37,8 @@ while 1:
     # u_b = np.array([130, 255, 255])#upper range of blue color, hsv values
 
     mask = cv2.inRange(hsv, l_b, u_b)
+    #hsv is set to 255, if the pixel is within the range else 0
+    # Making is filtering  or creating new image, based on given constraints
 
     res = cv2.bitwise_and(frame, frame, mask=mask)
 
