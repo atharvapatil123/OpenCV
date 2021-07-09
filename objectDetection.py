@@ -1,4 +1,4 @@
-# HSV: Hue: 360deg color range, Saturation: 0-100% from center to outer path, Value: from bottom to upper part 0-100%
+# HSV: Hue: 360deg color range, Saturation: 0-100% from center to outer edge, Value: from bottom to upper part 0-100%
 
 import cv2
 import numpy as np

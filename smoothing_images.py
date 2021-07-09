@@ -14,9 +14,9 @@ kernel = np.ones((4,4), np.float32)/25
 
 # Homogeneous filter is the most simple, each output filter is mean of the kernel neighbour, all pixels contribute equal weight, so homogeneous
 
-# Gaussian filter is using different-weight-kernel in both x and y direction, pixels in the middle have higher wts and goes on decreasing in outward direction. Desinged specifically to remove high noise.
+# Gaussian filter is using different-weight-kernel in both x and y direction, pixels in the middle have higher wts and goes on decreasing in outward direction. Designed specifically to remove high noise.
 
-#Median Filter: Replaces each picxel's value with the median of it neghbouring pixels. This method is great when dealing with "salt and pepper noise": white + black noise.
+#Median Filter: Replaces each pixel's value with the median of it neghbouring pixels. This method is great when dealing with "salt and pepper noise": white + black noise.
 
 #Bilateral Filter: Destroys the noise but not the edges unlike the above filters
 
@@ -32,7 +32,7 @@ gblur = cv2.GaussianBlur(img, (5,5), 0)#3rd arg is sigma x value, more is sigmax
 
 mblur = cv2.medianBlur(img, 5, 0)#Kernel size must be odd except 1
 
-bblur = cv2.bilateralFilter(img, 9, 75, 75)#2nd arg diameter of negighbouring pixel, sigma color, sigma space
+bblur = cv2.bilateralFilter(img, 9, 75, 75)#2nd arg diameter of neighbouring pixel, sigma color, sigma space
 
 titles = ['images', '2D Convulation', 'blur', 'gblur', 'mblur', 'bblur']
 images = [img, dst, blur, gblur, mblur, bblur]
