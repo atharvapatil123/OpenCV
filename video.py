@@ -6,8 +6,8 @@ cap = cv2.VideoCapture(0)#default camera index is either 0 or -1
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
 out = cv2.VideoWriter('output.avi',fourcc, 30.0, (640,480))#1st arg is name of output file, 2nd arg is fourcc code: 4byte code, use to specify video codec fourcc.org/codecs.php, 3rd arg is no of frames/sec, 4th arg is size
 
-cap.set(3, 3000.0)
-cap.set(4, 3000.0)#Heigth
+# cap.set(3, 3000.0)
+# cap.set(4, 3000.0)#Heigth
 print(cap.get(3))
 print(cap.get(4))
 
@@ -32,7 +32,7 @@ while(cap.isOpened()):
         #     cv2.imwrite(x,frame)
         #     i+=1
         #     time+=17000
-        # out.write(frame)
+        out.write(frame)
 
         cv2.imshow('frame', frame)
 
