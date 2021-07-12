@@ -16,7 +16,7 @@ kernel = np.ones((4,4), np.float32)/25
 
 # Gaussian filter is using different-weight-kernel in both x and y direction, pixels in the middle have higher wts and goes on decreasing in outward direction. Designed specifically to remove high noise.
 
-#Median Filter: Replaces each pixel's value with the median of it neghbouring pixels. This method is great when dealing with "salt and pepper noise": white + black noise.
+#Median Filter: Replaces each pixel's value with the median of it neighbouring pixels. This method is great when dealing with "salt and pepper noise": white + black noise.
 
 #Bilateral Filter: Destroys the noise but not the edges unlike the above filters
 
@@ -28,7 +28,7 @@ dst = cv2.filter2D(img, -1, kernel)#(image, desired depth of dest. image, kernel
 blur = cv2.blur(img, (5,5))#(image, kernel)
 #Averaging algorithmn 
 
-gblur = cv2.GaussianBlur(img, (5,5), 0)#3rd arg is sigma x value, more is sigmax: standard deiation, greater is the spreadness, so less is the blur effect
+gblur = cv2.GaussianBlur(img, (5,5), 0)#3rd arg is sigma x value, more is sigmax: standard deviation, greater is the spreadness, so less is the blur effect
 
 mblur = cv2.medianBlur(img, 5, 0)#Kernel size must be odd except 1
 
