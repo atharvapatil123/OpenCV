@@ -1,5 +1,5 @@
 # Contours: The curve joining all the continuous points along the boundary which are having the same color or intensity
-# Shape analysis, object detction eyt
+# Shape analysis, object detection etc
 
 import cv2
 import numpy as np

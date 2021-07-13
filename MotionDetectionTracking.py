@@ -5,8 +5,8 @@ import numpy as np
 cap = cv2.VideoCapture('data/vtest.avi')
 # cap = cv2.VideoCapture(0)
 
-fourcc = cv2.VideoWriter_fourcc(*'XVID')
-out = cv2.VideoWriter('output.avi',fourcc, 10.0, (768, 576))
+# fourcc = cv2.VideoWriter_fourcc(*'XVID')
+# out = cv2.VideoWriter('output.avi',fourcc, 10.0, (768, 576))
 
 ret, frame1 =  cap.read()
 ret, frame2 =  cap.read()
@@ -54,7 +54,7 @@ while cap.isOpened():
     
         # cv2.imshow("inter", frame)
         cv2.imshow("new", frame1)
-        out.write(frame1)
+        # out.write(frame1)
 
         frame1 = frame2
         ret, frame2 = cap.read()

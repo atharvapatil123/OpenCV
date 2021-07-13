@@ -19,6 +19,8 @@ for contour in contours:
     x = approx.ravel()[0]
     y = approx.ravel()[1] - 5
 
+    # ravel() method changes a 2-dimensional array or a multi-dimensional array into a contiguous flattened array. 
+
     if len(approx) == 3:
         cv2.putText(img, "Triangle", (x, y), cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 0))
     elif len(approx) == 4:

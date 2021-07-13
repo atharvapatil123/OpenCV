@@ -16,7 +16,7 @@ img2 = cv2.rectangle(img2,(0,0),(512,512),(1 ,0,0),-1)
 # img2 = cv2.rectangle(img2,(10,20),(40,50),(0,255,255),-1)
 
 # print(img.size)#returns total number of pixels in the image
-# print(img.shape)#returns tuple of number of rows, columns, and channels
+print(img.shape)#returns tuple of number of rows, columns, and channels
 # print(img.dtype)#returns dataType of the image
 
 b,g,r = cv2.split(img)
