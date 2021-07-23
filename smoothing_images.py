@@ -1,4 +1,4 @@
-# Smoothing is blurring images, removing noise, use linear filters in the process as they are fast: Homogeneous, gaussius, bilateral, median filters
+# Smoothing is blurring images, removing noise, use linear filters in the process as they are fast: Homogeneous, gaussian, bilateral, median filters
 
 import cv2
 import numpy as np

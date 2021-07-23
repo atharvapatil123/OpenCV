@@ -2,13 +2,13 @@ import numpy as np
 import cv2 
 from matplotlib import pyplot as plt
 
-img = cv2.imread("data/lena.jpg",0) 
+img = cv2.imread("data/lena.jpg",1) 
 
 # img = np.zeros((200, 200), np.uint8)
 # cv2.rectangle(img, (10, 10), (100, 100), (255), -1)
 # cv2.rectangle(img, (120, 120), (180, 180), (127), -1)
 
-hist = cv2.calcHist([img], [0], None, [256], [0, 256])
+hist = cv2.calcHist([img], [1], None, [256], [0, 256])
 # images : it is the source image of type uint8 or float32. it should be given in square brackets, ie, "[img]".
 # channels : it is also given in square brackets. It is the index of channel for which we calculate histogram. For example, if input is grayscale image, its value is [0]. For color image, you can pass [0], [1] or [2] to calculate histogram of blue, green or red channel respectively.
 # mask : mask image. To find histogram of full image, it is given as "None". But if you want to find histogram of particular region of image, you have to create a mask image for that and give it as mask. (I will show an example later.)
@@ -26,12 +26,12 @@ hist = cv2.calcHist([img], [0], None, [256], [0, 256])
 # cv2.imshow("g", g)
 # cv2.imshow("r", r)
 
-# plt.hist(img.ravel(), 255, [0, 256])#(image, max no. of pixel value, range)
+plt.hist(img.ravel(), 255, [0, 256])#(image, max no. of pixel value, range)
 # plt.hist(b.ravel(), 255, [0, 256])
 # plt.hist(g.ravel(), 255, [0, 256])
 # plt.hist(r.ravel(), 255, [0, 256])
 
-plt.plot(hist)
+# plt.plot(hist)
 # Histogram: Intensity distribution of an image
 # Calculates histogram of an image :Y-axis - Total no. of pixels, here 200*200=40000, X-axis - Maximum pixel value
 

@@ -21,7 +21,7 @@ print(img.shape)#returns tuple of number of rows, columns, and channels
 
 b,g,r = cv2.split(img)
 print((b,g,r))
-# # img = cv2.merge((r,b,g))#Gives a different image
+# img = cv2.merge((r,b,g))#Gives a different image
 # img = cv2.merge((b,g,r));
 # print(img[123,236])
 ball = img[289:335, 335:394]
@@ -47,7 +47,7 @@ bitXor = cv2.bitwise_xor(img,img2)#Gives high when both are alternate, and low, 
 
 bitNot = cv2.bitwise_not(img2)#Gives opposite value to given pixels, i.e 255-currentValue
 
-cv2.imshow("Coordinates of mouseclick on image",bitNot)
+cv2.imshow("Coordinates of mouseclick on image",img)
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
 

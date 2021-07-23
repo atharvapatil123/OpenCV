@@ -33,7 +33,7 @@ cv2.imshow('Upper level Gaussian pyramid', layer)
 lp = [layer]
 
 for i in range(5, 0, -1):
-    gausssian_expanded = cv2.pyrUp(gp[i-1])
+    gausssian_expanded = cv2.pyrUp(gp[i])
     laplacian = cv2.subtract(gp[i-1], gausssian_expanded)
     cv2.imshow(str(i), laplacian)
 

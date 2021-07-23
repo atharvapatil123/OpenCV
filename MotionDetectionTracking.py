@@ -22,19 +22,19 @@ while cap.isOpened():
         cv2.imshow("diff",diff)
 
         gray = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)
-        # cv2.imshow("gray",gray)
+        cv2.imshow("gray",gray)
 
-        # blur = cv2.GaussianBlur(gray, (5, 5), 0)
-        blur = cv2.bilateralFilter(gray, 9, 75, 75)
-        # cv2.imshow("blur",blur)
+        blur = cv2.GaussianBlur(gray, (5, 5), 0)
+        # blur = cv2.bilateralFilter(gray, 9, 75, 75)
+        cv2.imshow("blur",blur)
 
         _, thresh = cv2.threshold(blur, 50, 255, cv2.THRESH_BINARY)
-        # cv2.imshow("thresh",thresh)
+        cv2.imshow("thresh",thresh)
 
         dilated = cv2.dilate(thresh, None, iterations=3)
 
         # dilated = cv2.bilateralFilter(dilated, 9, 75, 75)
-        # cv2.imshow("dilated",dilated)
+        cv2.imshow("dilated",dilated)
 
         contours, _ = cv2.findContours(dilated, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 

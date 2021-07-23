@@ -5,7 +5,7 @@ import cv2
 img = cv2.imread("data/messi5.jpg")
 # img = cv2.imread("data/smarties.png")
 gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-template = cv2.imread("data/messi5_face.jpg", 0)
+template = cv2.imread("data/messi5_ball.jpg", 0)
 # template = cv2.imread("data/smarties_blue.png", 0)
 # w, h = template.shape[::-1]
 # Gives cols and rows value in reverse order

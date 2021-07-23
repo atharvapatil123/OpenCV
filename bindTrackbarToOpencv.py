@@ -15,7 +15,7 @@ def grayColor():
     cv2.createTrackbar(switch, 'image1', 0 ,1, nothing)
 
     while(1):
-        img = cv2.imread('lena.jpg')
+        img = cv2.imread('data/lena.jpg')
         k = cv2.waitKey(1) & 0xFF
         if k == 27:
             break

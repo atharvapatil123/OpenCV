@@ -61,7 +61,7 @@ def rectangle():
 
 def chess():
     b=False
-    img = cv2.imread('squirrel_cls.jpg',0)
+    img = cv2.imread('data/squirrel_cls.jpg',0)
     cv2.imshow('Line image',img)
     cv2.waitKey(3)
     # img = cv2.rectangle(img, (0,0), (45,43), (0,0,0), -1)
@@ -72,19 +72,19 @@ def chess():
         x=0
         while(x<=540):
             if a:
-                img = cv2.rectangle(img, (x+0,0+y), (45+x,43+y), (255,255,255), -1)
+                img = cv2.rectangle(img, (x+0,0+y), (54+x,43+y), (255,255,255), -1)
                 a=0
                 cv2.imshow('Line image',img)
                 key = cv2.waitKey(3)
             else: 
-                img = cv2.rectangle(img, (x+0,0+y), (45+x,43+y), (0,0,0), -1)
+                img = cv2.rectangle(img, (x+0,0+y), (54+x,43+y), (0,0,0), -1)
                 a=1
                 cv2.imshow('Line image',img)
                 key = cv2.waitKey(3)
             if key==ord('q'):
                     b=True
                     break 
-            x+=45
+            x+=54
         y+=43
     if(b==True):
         cv2.destroyAllWindows()

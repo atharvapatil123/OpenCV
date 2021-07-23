@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread('data/lena.jpg', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('data/road1.jpg', cv2.IMREAD_GRAYSCALE)
 
 lap = cv2.Laplacian(img, cv2.CV_64F, ksize=3)#(image, data-type: 64-bit Float due to -ve slope induced by tranforming the image from white to black, kernel size (optional))
 # Converts the edges to white and remaining black or makes edges more visible
@@ -27,7 +27,8 @@ sobely = np.uint8(np.absolute(sobely))
 sobelCombined = cv2.bitwise_or(sobelx, sobely)
 
 bblur = cv2.bilateralFilter(sobelCombined, 9, 75, 75)
-
+def nothing(x):
+    print(x)
 # Canny Edge Detector: Edge detector operator that uses a multi-stage algorithmn to detect a wide range of edges in images
 # Noise reduction
 # Gradient calculation
@@ -35,17 +36,28 @@ bblur = cv2.bilateralFilter(sobelCombined, 9, 75, 75)
 # Double threshold
 # Edge tracking by hysteresis
 
-canny = cv2.Canny(img, 100, 200)#(image, 1st threshold for hysteresis, 2nd threshold for hysteresis)
+cv2.namedWindow('canny')
+# canny = cv2.Canny(img, 100, 200)#(image, 1st threshold for hysteresis, 2nd threshold for hysteresis)
+cv2.createTrackbar('t1','canny', 0, 255, nothing)
+cv2.createTrackbar('t2','canny', 0, 255, nothing)
+while 1:
+    t1 = cv2.getTrackbarPos('t1','canny')
+    t2 = cv2.getTrackbarPos('t2','canny')
+    canny = cv2.Canny(img, t1, t2)
+    cv2.imshow('canny', canny)
+    key = cv2.waitKey(2)
+    if(key == 27):
+        break
 
-
-titles = ['image', 'Laplasian', 'sobelX', 'sobelY', 'sobelCombined', 'bblur',  'canny']
+cv2.destroyAllWindows()
+# titles = ['image', 'Laplasian', 'sobelX', 'sobelY', 'sobelCombined', 'bblur',  'canny']
 # titles = ['image', 'canny']
-images = [img, lap, sobelx, sobely, sobelCombined, bblur, canny]
+# images = [img, lap, sobelx, sobely, sobelCombined, bblur, canny]
 # images = [img, canny]
-for i in range(7):
-    plt.subplot(2, 4, i+1), plt.imshow(images[i], 'gray')
-    plt.title(titles[i])
-    plt.xticks([])
-    plt.yticks([])
+# for i in range(7):
+#     plt.subplot(2, 4, i+1), plt.imshow(images[i], 'gray')
+#     plt.title(titles[i])
+#     plt.xticks([])
+#     plt.yticks([])
 
-plt.show()
+# plt.show()

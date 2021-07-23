@@ -15,10 +15,11 @@ print(len(contours))
 for contour in contours:
     approx = cv2.approxPolyDP(contour, 0.01*cv2.arcLength(contour, True), True)#(curve, epsilon: parameter specifying approx. accuracy (acrLength calculates the curve length, closed- True or False), closed-true or False)
     # It approximates a contour shape to another shape with less number of vertices depending upon the precision we specify. It is an implementation of Douglas-Peucker algorithm. 
+    print(approx)
     cv2.drawContours(img, [approx], 0, (0, 0, 0), 5)
     x = approx.ravel()[0]
     y = approx.ravel()[1] - 5
-
+    print(x, " ", y)
     # ravel() method changes a 2-dimensional array or a multi-dimensional array into a contiguous flattened array. 
 
     if len(approx) == 3:

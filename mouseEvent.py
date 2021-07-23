@@ -46,11 +46,11 @@ def click_event(event, x, y, flags, params):
     # def drawCircle():
         # if event == cv2.EVENT_LBUTTONDOWN:
         #     cv2.circle(img1, (x,y), 3, (0,255,0), -1)
-        # points.append((x,y))
-        # if len(points)>=2:
-        #     # cv2.line(img1, points[-1], points[-2], (0,255,0), 2)
-        #     cv2.circle(img1, points[-2], dist(points[-2],points[-1]), (0,255,0), 1)
-        # cv2.imshow("Coordinates of mouseclick on image",img1)
+        #     points.append((x,y))
+        #     if len(points)>=2:
+        #         # cv2.line(img1, points[-1], points[-2], (0,255,0), 2)
+        #         cv2.circle(img1, points[-2], dist(points[-2],points[-1]), (0,255,0), 1)
+        #     cv2.imshow("Coordinates of mouseclick on image",img1)
         
     #def myColorImage():
         if event ==cv2.EVENT_LBUTTONDOWN:
@@ -72,7 +72,7 @@ def dist(center, point):
 
 points = []
 # img1 = np.zeros((512,512,3),np.uint8)
-img1 = cv2.imread('lena.jpg')
+img1 = cv2.imread('data/lena.jpg')
 # img2 = cv2.imread('aloeL.jpg')
 
 # cv2.imshow('MouseMove on image', img)

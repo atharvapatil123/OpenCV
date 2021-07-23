@@ -15,11 +15,11 @@ import cv2
 import numpy as np
 
 # img = cv2.imread('data/sudoku.png')
-img = cv2.imread('data/road.jpg')
-print(img.shape)
+img = cv2.imread('data/road1.jpg')
+# print(img.shape)
 print("\n")
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-edges = cv2.Canny(gray, 150, 200, apertureSize=3)
+edges = cv2.Canny(gray, 51, 105, apertureSize=3)
 cv2.imshow('canny', edges)
 def HoughLinePmethod(): 
     lines = cv2.HoughLinesP(edges, 1, np.pi / 180, 130, minLineLength=100, maxLineGap=10)#(image, rho, theta, threshold, minLineLength: Line segments shorter than this value are rejected, maxLineGap: Max allowed gap between line segments to treat them as single lines)
